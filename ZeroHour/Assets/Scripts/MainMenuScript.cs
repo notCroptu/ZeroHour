@@ -11,7 +11,7 @@ public class MainMenuScript : MonoBehaviour
     [SerializeField] private GameObject buttons;
     public void Play()
     {
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("Scenes/GameScene");
     }
     public void Credits()
     {
@@ -19,13 +19,13 @@ public class MainMenuScript : MonoBehaviour
     }
     private IEnumerator CreditsCoroutine()
     {
-        yield return Fade(buttons, 0f, 0.7f);
-        yield return Fade(credits, 1f, 0.7f);
+        yield return Fade(buttons, 0f, 0.3f);
+        yield return Fade(credits, 1f, 0.6f);
 
         yield return new WaitForSeconds(4f);
 
-        yield return Fade(credits, 0f, 0.7f);
-        yield return Fade(buttons, 1f, 0.7f);
+        yield return Fade(credits, 0f, 0.6f);
+        yield return Fade(buttons, 1f, 0.3f);
     }
     private IEnumerator Fade(GameObject panel, float targetAlpha, float duration)
     {
