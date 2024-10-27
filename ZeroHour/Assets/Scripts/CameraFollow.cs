@@ -8,7 +8,7 @@ public class CameraFollow : MonoBehaviour
     [SerializeField] private float followRate;
     private Vector2 newPosition;
 
-    private void Update()
+    private void FixedUpdate()
     {
         newPosition = player.transform.position;
 

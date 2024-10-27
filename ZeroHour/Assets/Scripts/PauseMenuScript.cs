@@ -7,6 +7,10 @@ public class PauseMenuScript : MonoBehaviour
 {
     [SerializeField] GameObject pause;
     private float initTimeScale;
+    void Start()
+    {
+        initTimeScale = Time.timeScale;
+    }
 
     void Update()
     {
@@ -22,7 +26,7 @@ public class PauseMenuScript : MonoBehaviour
     public void Continue()
     {
         pause.SetActive(false);
-        Time.timeScale = 0f;
+        Time.timeScale = initTimeScale;
     }
     public void Quit()
     {
